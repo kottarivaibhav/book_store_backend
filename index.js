@@ -3,7 +3,7 @@ const app = express();
 const cors = require("cors");
 
 const mongoose = require("mongoose");
-const port = process.env.PORT || 5000;
+const port = process.env.PORT || 5000;  
 require('dotenv').config()
 
 // middleware
@@ -20,8 +20,9 @@ const userRoutes = require('./src/users/user.route');
 
 
 app.use("/api/books", bookRoutes)
-app.use("/api/prders",orderRoutes)
-app.use("api/auth",userRoutes);
+app.use("/api/orders",orderRoutes)
+app.use("/api/auth", userRoutes); // ✅
+
 
 
 async function main() {
